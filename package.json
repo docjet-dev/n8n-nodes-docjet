@@ -18,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/docjet/n8n-nodes-docjet.git"
+		"url": "git+https://github.com/docjet-dev/n8n-nodes-docjet.git"
 	},
 	"engines": {
 		"node": ">=20.15"
