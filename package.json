@@ -1,0 +1,55 @@
+{
+	"name": "n8n-nodes-docjet",
+	"version": "1.0.0",
+	"description": "n8n community node for DocJet — render branded PDFs and PNG images from templates or raw HTML via the DocJet API",
+	"keywords": [
+		"n8n-community-node-package",
+		"docjet",
+		"pdf",
+		"png",
+		"document-generation",
+		"html-to-pdf"
+	],
+	"license": "MIT",
+	"homepage": "https://docjet.dev/docs",
+	"author": {
+		"name": "DocJet",
+		"email": "support@docjet.dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/docjet/n8n-nodes-docjet.git"
+	},
+	"engines": {
+		"node": ">=20.15"
+	},
+	"main": "index.js",
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/DocJetApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/DocJet/DocJet.node.js"
+		]
+	},
+	"scripts": {
+		"build": "tsc && node -e \"const fs=require('fs');fs.mkdirSync('dist/nodes/DocJet',{recursive:true});fs.copyFileSync('nodes/DocJet/docjet.svg','dist/nodes/DocJet/docjet.svg')\"",
+		"lint": "eslint nodes credentials package.json",
+		"lintfix": "eslint nodes credentials package.json --fix",
+		"prepublishOnly": "npm run build && npm run lint"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@n8n/node-cli": "0.34.0",
+		"@typescript-eslint/parser": "^8.35.0",
+		"eslint": "9.29.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.6",
+		"jsonc-eslint-parser": "^2.4.0",
+		"n8n-workflow": "^2.16.0",
+		"typescript": "5.9.3"
+	}
+}
