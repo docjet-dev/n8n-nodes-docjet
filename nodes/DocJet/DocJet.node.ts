@@ -13,7 +13,6 @@
  * goes through n8n's declarative routing engine (n8n-injected httpRequest).
  */
 import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionTypes } from 'n8n-workflow';
 
 export class DocJet implements INodeType {
 	description: INodeTypeDescription = {
@@ -27,8 +26,8 @@ export class DocJet implements INodeType {
 		defaults: {
 			name: 'DocJet',
 		},
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
+		inputs: ['main'],
+		outputs: ['main'],
 		credentials: [
 			{
 				name: 'docJetApi',

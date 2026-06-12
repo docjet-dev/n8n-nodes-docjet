@@ -17,6 +17,9 @@ export class DocJetApi implements ICredentialType {
 
 	displayName = 'DocJet API';
 
+	// Full URL is correct for community credentials (n8n renders it as the docs
+	// link); the miscased rule enforces n8n-internal slug convention only.
+	// eslint-disable-next-line n8n-nodes-base/cred-class-field-documentation-url-miscased
 	documentationUrl = 'https://docjet.dev/docs';
 
 	properties: INodeProperties[] = [
